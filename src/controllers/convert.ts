@@ -1,11 +1,11 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 /**
  * POST /convert
  * Accepts audio files and returns MIDI drum loops.
  */
 export let index = (req: Request, res: Response) => {
     const busboy = (req as any).busboy;
-    busboy.on("file", function (fieldname: string, file: NodeJS.ReadableStream, filename: string) {
+    busboy.on('file', function (fieldname: string, file: NodeJS.ReadableStream, filename: string) {
         // validate audio file
         // resample if needed
         // send file to speech-to-text
@@ -14,9 +14,9 @@ export let index = (req: Request, res: Response) => {
         res.status(200);
         res.send(message);
     });
-    busboy.on("finish", function() {
-        console.log("Done parsing form");
-        res.writeHead(303, { Connection: "close" });
+    busboy.on('finish', function() {
+        console.log('Done parsing form');
+        res.writeHead(303, { Connection: 'close' });
         res.end();
     });
     req.pipe(busboy);
