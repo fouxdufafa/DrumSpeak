@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1 DrumSpeak
+  p.lead Converts speech to drum snippets.
+  hr
+  form(action="/convert", method="post", id='convertForm', enctype="multipart/form-data")
+    input(type='file', accept='audio/*', capture id='recorder' name='recorder')
+    button(type="submit" value="submit")
