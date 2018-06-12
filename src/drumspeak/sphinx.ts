@@ -1,1 +1,0 @@
-// interface to CMU sphinx speech-to-text (consider using the node bindings package)
