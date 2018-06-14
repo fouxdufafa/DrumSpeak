@@ -1,5 +1,7 @@
 import * as childProcess from 'child_process';
+import * as es from 'event-stream';
 import * as stream from 'stream';
+import ffmpeg from 'fluent-ffmpeg';
 
 export type SphinxSegmentType = 'word' | 'silence' | 'start' | 'end';
 
@@ -50,6 +52,12 @@ export const spawn = () => {
     return sphinx;
 };
 
+export const createResampler = (file: stream.Readable) => {
+    const converter = ffmpeg(file).format('wav');
+    const output = new stream.PassThrough();
+    return converter.pipe(output);
+};
+
 export const createStreamingParser = () => new stream.Transform({
     transform: function (data: string, encoding: string, cb) {
         // regex split utterances
@@ -61,3 +69,11 @@ export const createStreamingParser = () => new stream.Transform({
     },
     objectMode: true
 });
+
+export const createStreamProcessor = (file: stream.Readable) => {
+    const resampler = createResampler(file);
+    const sphinxProc = spawn();
+    const parser = createStreamingParser();
+    const speechToText = es.duplex(sphinxProc.stdin, sphinxProc.stdout);
+    return resampler.pipe(speechToText).pipe(parser) as stream.Readable;
+};
