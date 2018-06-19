@@ -1,0 +1,102 @@
+[{
+    "text": "<s>",
+    "type": "start",
+    "start": 1.28,
+    "end": 1.63
+},
+{
+    "text": "all",
+    "type": "word",
+    "start": 1.64,
+    "end": 1.84
+},
+{
+    "text": "i",
+    "type": "word",
+    "start": 1.85,
+    "end": 1.93
+},
+{
+    "text": "can(2)",
+    "type": "word",
+    "start": 1.94,
+    "end": 2.1
+},
+{
+    "text": "say",
+    "type": "word",
+    "start": 2.11,
+    "end": 2.4
+},
+{
+    "text": "is",
+    "type": "word",
+    "start": 2.41,
+    "end": 2.56
+},
+{
+    "text": "the",
+    "type": "word",
+    "start": 2.57,
+    "end": 2.65
+},
+{
+    "text": "book",
+    "type": "word",
+    "start": 2.66,
+    "end": 2.91
+},
+{
+    "text": "was(2)",
+    "type": "word",
+    "start": 2.92,
+    "end": 3.09
+},
+{
+    "text": "a",
+    "type": "word",
+    "start": 3.1,
+    "end": 3.18
+},
+{
+    "text": "fantastic",
+    "type": "word",
+    "start": 3.19,
+    "end": 4.66
+},
+{
+    "text": "<sil>",
+    "type": "silence",
+    "start": 4.67,
+    "end": 4.69
+},
+{
+    "text": "series",
+    "type": "word",
+    "start": 4.7,
+    "end": 5.38
+},
+{
+    "text": "of",
+    "type": "word",
+    "start": 5.39,
+    "end": 5.52
+},
+{
+    "text": "unfortunate",
+    "type": "word",
+    "start": 5.53,
+    "end": 6.09
+},
+{
+    "text": "events",
+    "type": "word",
+    "start": 6.1,
+    "end": 6.67
+},
+{
+    "text": "</s>",
+    "type": "end",
+    "start": 6.68,
+    "end": 7.03
+}]
